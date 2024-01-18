@@ -1,42 +1,22 @@
 import {
   Image,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  Avatar,
   Flex,
+  Divider,
+  Text,
+  Stack,
   // Icon,
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { THEME } from '../../constants/theme';
 import { AvatarMenu } from '../AvatarMenu';
+import { NotificationsMenu } from '../NotificationsMenu';
 
 export function Header() {
   const navigate = useNavigate();
 
-  function handleLogout() {
-    navigate('/');
-  }
-
   function goHome() {
     navigate('/');
   }
-
-  const dropdownItems = [
-    // {
-    //   label: 'Item 1',
-    //   icon: 'document-contract-edit-pen',
-    //   onClick: () => console.log('item 1'),
-    // },
-    {
-      label: 'Sair',
-      color: 'danger.500',
-      fontWeight: 'bold',
-      icon: 'logout',
-      onClick: handleLogout,
-    },
-  ];
 
   return (
     <Flex
@@ -60,8 +40,15 @@ export function Header() {
         onClick={goHome}
         cursor='pointer'
       />
+      <Stack direction='row' h='70%' gap={4}>
+        <NotificationsMenu hasNotification={2} />
 
-      <AvatarMenu />
+        <Divider ml={2} orientation='vertical' color={THEME.fontPrimary} />
+        <Text color={THEME.fontPrimary} alignSelf={'center'}>
+          Olá, João Victor
+        </Text>
+        <AvatarMenu />
+      </Stack>
     </Flex>
   );
 }

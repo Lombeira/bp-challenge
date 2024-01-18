@@ -8,17 +8,20 @@ import {
 } from '@chakra-ui/react';
 import { THEME } from '../../constants/theme';
 import { NotAllowedIcon } from '@chakra-ui/icons';
+import { useNavigate } from 'react-router-dom';
 
 export const AvatarMenu = () => {
+  const navigate = useNavigate()
   const dropdownItems = [
     {
       label: 'Sair',
       color: 'danger.500',
       fontWeight: 'bold',
       icon: <NotAllowedIcon />,
-      onClick: () => console.log('sair'),
+      onClick: () => navigate('/'),
     },
   ];
+
   return (
     <Menu>
       <MenuButton as='button'>
