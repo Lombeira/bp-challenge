@@ -4,12 +4,11 @@ import {
   Card,
   Flex,
   FormControl,
-  FormHelperText,
   FormLabel,
   Image,
   Input,
 } from '@chakra-ui/react';
-import { Form, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { THEME } from '../constants/theme';
 
 export const Login = () => {
@@ -48,6 +47,7 @@ export const Login = () => {
             <Input name='password' type='password' />
           </FormControl>
           <Button
+            fontSize='11px'
             onClick={() => navigate('/dashboard/home')}
             color={THEME.fontPrimary}
             bgColor={THEME.primary}

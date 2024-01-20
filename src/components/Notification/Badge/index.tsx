@@ -1,6 +1,10 @@
 import { Flex, Text } from '@chakra-ui/react';
-import { THEME } from '../../constants/theme';
-import { INotificationsMenu } from './interface';
+import { THEME } from '../../../constants/theme';
+
+export interface INotificationsMenu {
+  hasNotification?: number | null;
+  isAbsolute?: boolean;
+}
 
 export const NotificationBadge = ({
   hasNotification = null,
@@ -8,8 +12,8 @@ export const NotificationBadge = ({
 }: INotificationsMenu) => {
   return (
     <Flex
-      w='5'
-      h='5'
+      w='15px'
+      h='15px'
       borderRadius='full'
       bgColor='red.600'
       alignItems='center'
@@ -20,7 +24,7 @@ export const NotificationBadge = ({
         right: '-10px',
       })}
     >
-      <Text fontSize='14' color={THEME.fontPrimary}>
+      <Text fontSize='10px' color={THEME.fontPrimary}>
         {hasNotification}
       </Text>
     </Flex>

@@ -7,9 +7,8 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { BellIcon } from '@chakra-ui/icons';
-import { THEME } from '../../constants/theme';
-import { INotificationsMenu } from '../NotificationBadge/interface';
-import { NotificationBadge } from '../NotificationBadge';
+import { THEME } from '../../../constants/theme';
+import { INotificationsMenu, NotificationBadge } from '../Badge';
 import { Accordion } from './accordion';
 import { NOTIFICATION_DATA } from './notification.data';
 
@@ -36,18 +35,23 @@ export const NotificationsMenu = ({
           )}
         </Flex>
       </MenuButton>
-      <MenuList pt={0} bgColor={'white'}>
+      <MenuList
+        pt={0}
+        boxShadow='-5px 0px 10px 0px rgba(0, 0, 0, 0.15), 5px 0px 10px 0px rgba(0, 0, 0, 0.15), 0px -5px 10px 0px rgba(0, 0, 0, 0.15), 0px 5px 10px 0px rgba(0, 0, 0, 0.15);'
+      >
         <Flex
           justifyContent={'center'}
           alignItems={'center'}
           gap={2}
           bgColor={THEME.iconFeatured}
+          borderTopRadius={8}
+          p='4'
         >
           <Text
-            fontSize={14}
+            fontSize='12px'
+            fontWeight='500'
             textAlign='center'
             alignSelf={'center'}
-            py='4'
             color={THEME.fontPrimary}
             borderRadius={8}
           >

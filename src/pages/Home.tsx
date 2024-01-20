@@ -1,15 +1,18 @@
 import { SimpleGrid } from '@chakra-ui/react';
-import { WelcomeCard } from '../components/Cards/Welcome';
-import { THEME } from '../constants/theme';
-import { SalesCard } from '../components/Cards/Sales';
-import { ProposalsStats } from '../components/Cards/Proposals/ProposalsStats';
-import { ProposalsGraph } from '../components/Cards/Proposals/ProposalsGraph';
+import { WelcomeCard } from '../components/Welcome';
+import { SalesGraph } from '../components/Sales/Graph';
+import { ProposalsStats } from '../components/Proposals/Stats';
+import { ProposalsGraph } from '../components/Proposals/Graph';
+import { SalesGoals } from '../components/Sales/Goals';
+import { MapChart } from '../components/Range';
 
 export const Home = () => (
-  <SimpleGrid columns={2} spacing={10} bgColor={THEME.dashboardBg}>
+  <SimpleGrid columns={{ sm: 1, lg: 2 }} spacing={10}>
     <WelcomeCard />
     <ProposalsStats />
-    <SalesCard />
+    <SalesGraph />
     <ProposalsGraph />
+    <SalesGoals />
+    <MapChart />
   </SimpleGrid>
 );

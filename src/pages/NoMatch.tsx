@@ -1,7 +1,11 @@
+import { Flex, Text } from '@chakra-ui/react';
+
 export const NoMatch = () => {
   return (
-    <div>
-      <h1>404</h1>
-    </div>
+    <Flex justifyContent={'center'} alignItems={'center'} h='400px'>
+      <Text fontSize='22px' fontWeight={500}>
+        Em desenvolvimento...
+      </Text>
+    </Flex>
   );
 };

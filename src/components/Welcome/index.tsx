@@ -1,5 +1,5 @@
 import { Card, Flex, Text } from '@chakra-ui/react';
-import { THEME } from '../../../constants/theme';
+import { THEME } from '../../constants/theme';
 import { SunIcon } from '@chakra-ui/icons';
 
 const IconFeatured = () => (

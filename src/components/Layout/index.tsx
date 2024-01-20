@@ -3,13 +3,20 @@ import { Outlet } from 'react-router-dom';
 import { Sidebar } from '../Sidebar';
 import { Header } from '../Header';
 import { THEME } from '../../constants/theme';
+import { useMenuStore } from '../../store/useMenu';
 
 export const Layout = () => {
+  const { isMenuOpen } = useMenuStore();
+  const sidebarBase = isMenuOpen ? '240px' : '90px';
+  const sidebarLg = isMenuOpen ? '300px' : '90px';
   return (
     <>
       <Grid
-        templateRows='57px 1fr'
-        templateColumns='300px 1fr'
+        templateRows='64px 1fr'
+        templateColumns={{
+          base: `${sidebarBase} 1fr`,
+          lg: `${sidebarLg} 1fr`,
+        }}
         templateAreas={`"header header"
                   "nav main"`}
         background={THEME.primary}
@@ -24,7 +31,7 @@ export const Layout = () => {
           paddingX='8'
           paddingY='7'
           overflowX='hidden'
-          bg='white'
+          bg={THEME.dashboardBg}
           borderTopLeftRadius={16}
         >
           <Outlet />
