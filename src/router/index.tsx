@@ -5,7 +5,7 @@ import { Login } from '../pages/Login';
 import { Home } from '../pages/Home';
 
 export const Router = () => (
-  <BrowserRouter>
+  <BrowserRouter basename='/bp-challenge/'>
     <Routes>
       <Route path='/' element={<Login />}></Route>
       <Route path='/dashboard' element={<Layout />}>
