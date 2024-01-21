@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Text, Tooltip } from '@chakra-ui/react';
+import { Flex, Image, Text, Tooltip } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { THEME } from '../../constants/theme';
 import { useMenuStore } from '../../store/useMenu';

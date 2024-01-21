@@ -6,7 +6,6 @@ import {
   AccordionPanel,
   Flex,
   Text,
-  Box,
 } from '@chakra-ui/react';
 import { NOTIFICATION_DATA } from './notification.data';
 import { THEME } from '../../../constants/theme';
@@ -17,13 +16,7 @@ interface IAccordion {
 
 export const Accordion = ({ data }: IAccordion) => {
   return (
-    <ChakraAccordion
-      defaultIndex={[0]}
-      allowMultiple
-      w='349px'
-
-      p={1}
-    >
+    <ChakraAccordion defaultIndex={[0]} allowMultiple w='349px' p={1}>
       {data.map(({ label, date, hour, message, type }) => (
         <AccordionItem key={label}>
           <AccordionButton>
