@@ -19,3 +19,4 @@ jobs:
       with:
         branch: master
         folder: dist
+        token: ${{ secrets.ACCESS_TOKEN }}
