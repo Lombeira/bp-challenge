@@ -1,5 +1,5 @@
 import { Flex, Image, Text, Tooltip } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { THEME } from '../../constants/theme';
 import { useMenuStore } from '../../store/useMenu';
 
@@ -11,8 +11,9 @@ interface INavItem {
 
 export const NavItem = ({ icon, label, to }: INavItem) => {
   const { isMenuOpen } = useMenuStore();
+  const { pathname } = useLocation();
 
-  const isSelected = window.location.pathname === to;
+  const isSelected = pathname === to;
 
   return isMenuOpen ? (
     <Flex
