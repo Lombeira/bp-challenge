@@ -12,7 +12,7 @@ export const Router = () => (
         <Route path='home' element={<Home />} />
         <Route path='*' element={<NoMatch />} />
       </Route>
-      <Route path='*' element={<NoMatch />} />
+      {/* <Route path='*' element={<NoMatch />} /> */}
     </Routes>
   </BrowserRouter>
 );
